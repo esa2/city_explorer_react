@@ -9,18 +9,18 @@ Number and name of feature: create Header component
 
 Estimate of time needed to complete: 20 min
 
-Start time: 18:00
+Start time: 17:50
 
-Finish time: 
+Finish time: 18:05
 
-Actual time needed to complete: 
+Actual time needed to complete: 15 mins
 ***
 
 Number and name of feature: create Main component
 
 Estimate of time needed to complete: 40 min
 
-Start time: 
+Start time: 18:20
 
 Finish time: 
 
@@ -31,11 +31,11 @@ Number and name of feature: create Search component
 
 Estimate of time needed to complete: 20 min
 
-Start time: 
+Start time: 18:05
 
-Finish time: 
+Finish time: 18:20
 
-Actual time needed to complete: 
+Actual time needed to complete: 15 mins 
 ***
 
 Number and name of feature: create Map component

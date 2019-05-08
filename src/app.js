@@ -18,14 +18,32 @@ class Header extends React.Component {
   }
 }
 
+class Search extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <section>
+        <label>Search for a location</label>
+        <input type="text" placeholder="Enter a location here"/>
+        <button type="submit">Explore!</button>
+      </section>
+    );
+  }
+}
+
 class App extends React.Component {
   render() {
     return (
+      <React.Fragment>
       <Header />
-      // <Main />
-      // <Search />
-      // <Map />
-      // <Result />
+      {/* <Main /> */}
+       <Search />
+      {/* // <Map />
+      // <Result /> */}
+      </React.Fragment>
     )
   }
 }
