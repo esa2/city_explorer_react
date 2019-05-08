@@ -1,4 +1,5 @@
 import React from 'react'
+import './app.css';
 
 class Header extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className="header">
         <h1>City Explorer</h1>
         <p>
           Enter a location below to learn about the weather, events,
@@ -25,7 +26,7 @@ class Search extends React.Component {
 
   render() {
     return (
-      <section>
+      <section className="header">
         <label>Search for a location</label>
         <input type="text" placeholder="Enter a location here" />
         <button type="submit">Explore!</button>
@@ -41,7 +42,7 @@ class Map extends React.Component {
 
   render() {
     return (
-      <img src="https://placehold.it/480x400/000" />
+      <img src="https://placehold.it/480x400/000" alt="google map" />
     );
   }
 }
