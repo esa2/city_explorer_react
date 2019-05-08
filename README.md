@@ -42,19 +42,19 @@ Number and name of feature: create Map component
 
 Estimate of time needed to complete: 20 min
 
-Start time: 
+Start time: 19:00
 
-Finish time: 
+Finish time: 19:05
 
-Actual time needed to complete: 
+Actual time needed to complete: 5 mins 
 ***
 
 Number and name of feature: create Result component
 
 Estimate of time needed to complete: 20 min
 
-Start time: 
+Start time: 19:05
 
-Finish time: 
+Finish time: 19:15
 
-Actual time needed to complete: 
+Actual time needed to complete: 10 mins 
