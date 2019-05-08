@@ -42,7 +42,7 @@ class Map extends React.Component {
 
   render() {
     return (
-      <img src="https://placehold.it/480x400/000" alt="google map" />
+      <img src="map.png" alt="google map" />
     );
   }
 }
@@ -55,7 +55,7 @@ class Result extends React.Component {
   render() {
     return (
       <section>
-      <h3>Results from the Dark Sky API</h3>
+      <h3>{this.props.title}</h3>
       <p>
         loremTempor pariatur duis ea tempor ipsum dolor anim ipsum anim
         enim. Incididunt exercitation officia qui cillum non sint do.
@@ -80,11 +80,11 @@ class Main extends React.Component {
       <React.Fragment>
         <Search />
         <Map />
-        <Result />
-        <Result />
-        <Result />
-        <Result />
-        <Result />
+        <Result title="Results from the Dark Sky API"/>
+        <Result title="Results from the Yelp API"/>
+        <Result title="Results from the Eventbrite API"/>
+        <Result title="Results from The Movie DB API"/>
+        <Result title="Results from the Hiking Project API"/>
         </React.Fragment>
     )
   }
