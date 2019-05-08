@@ -20,11 +20,11 @@ Number and name of feature: create Main component
 
 Estimate of time needed to complete: 40 min
 
-Start time: 18:20
+Start time: 18:30
 
-Finish time: 
+Finish time: 18:55
 
-Actual time needed to complete: 
+Actual time needed to complete:  25 mins
 ***
 
 Number and name of feature: create Search component
