@@ -10,15 +10,8 @@ class App extends React.Component {
     super(props)
     
     this.state = {
-      location: {},
-      query: ''
+      location: {}
     };
-  }
-
-  handleQuery = e => {
-    e.preventDefault();
-    console.log(e.target.value)
-    // this.setState({ query })
   }
 
   searchGetResult = (searchResult) => {
@@ -27,13 +20,14 @@ class App extends React.Component {
   }
 
   render() {
+    
     return (
-      <React.Fragment>
+      <>
         <Header />
-        <SearchForm getQuery={this.handleQuery} searchResult={this.searchGetResult}/>
+        <SearchForm searchResult={this.searchGetResult}/>
         <Map location={this.state.location}/>
-        <SearchResults />
-      </React.Fragment>
+        <SearchResults location={this.state.location}/>
+      </>
     )
   }
 }
