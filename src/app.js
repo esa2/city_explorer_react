@@ -10,17 +10,28 @@ class App extends React.Component {
     super(props)
     
     this.state = {
-      location: {}
+      location: {},
+      query: ''
     };
   }
 
+  handleQuery = e => {
+    e.preventDefault();
+    console.log(e.target.value)
+    // this.setState({ query })
+  }
+
+  searchGetResult = (searchResult) => {
+    console.log('searhResult', searchResult)
+    this.setState({ location: searchResult })
+  }
 
   render() {
     return (
       <React.Fragment>
         <Header />
-        <SearchForm />
-        <Map />
+        <SearchForm getQuery={this.handleQuery} searchResult={this.searchGetResult}/>
+        <Map location={this.state.location}/>
         <SearchResults />
       </React.Fragment>
     )

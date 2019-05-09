@@ -66,11 +66,11 @@ Number and name of feature: create App component
 
 Estimate of time needed to complete: 90 min
 
-Start time: 18:10
+Start time: 18:30
 
-Finish time:
+Finish time: 19:40
 
-Actual time needed to complete:
+Actual time needed to complete: 70 min
 ***
 
 Number and name of feature: create Header component
