@@ -18,8 +18,7 @@ class SearchForm extends React.Component {
 
   fetchCityData = e => {
     e.preventDefault();
-    console.log(this.state.query);
-    superagent('get', `http://localhost:4000/location`)
+    superagent.get(`https://city-lab9.herokuapp.com/location`)
     .query({data: this.state.query})
     .then( response => {
         this.setState({ body: response.body });
