@@ -1,12 +1,24 @@
 import React from 'react';
+import superagent from 'superagent';
 
 class DarkSky extends React.Component {
 
+  getResource = () => {
+    superagent('get', `https://city-explorer-backend.herokuapp.com/weather`)
+    .query({data: this.props.location})
+    .then( response => {
+      let body = response.body;
+      console.log('body', body)
+    })
+  }
+
   render() {
+    console.log('props', this.props.location)
+    // this.getResource()
     return (
       <section>
       <h3>Results from the Dark Sky API</h3>
-      <p>
+      <p >
         loremTempor pariatur duis ea tempor ipsum dolor anim ipsum anim
       </p>
     </section>
