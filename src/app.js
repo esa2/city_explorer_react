@@ -23,7 +23,6 @@ class App extends React.Component {
     .query({data: this.state.location})
     .then( data => {
       this.setState({ [resource]: data.body });
-      console.log(this.state.movies)
     })
   }
 

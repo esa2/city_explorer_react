@@ -13,9 +13,40 @@ class DarkSky extends React.Component {
     }
     
     return (
-      <section>
+      <section className="weather">
         {header}
       < ul>{weatherData}</ul>
+    </section>
+    )
+  }
+}
+
+class MovieDB extends React.Component {
+
+  render() {
+    let header;
+    let movieData;
+    if (this.props.movie) {
+      header = <h3>Results from The Movie DB API</h3>
+      movieData = this.props.movie.map((ele, idx) => (
+        <li key={idx}>
+        
+             
+        
+        <p><span>{ele.title}</span> was relased on {ele.released_on}. Out of {ele.total_votes} total votes, {ele.title} has an average vote of {ele.average_votes} and a popularity score of {ele.popularity}.</p>
+
+
+        <img src={ele.image_url} alt="movie"></img>
+        <p>{ele.overview}</p>
+        
+        </li> 
+      ));
+    }
+
+    return (
+      <section className="movies">
+        {header}
+      < ul>{movieData}</ul>
     </section>
     )
   }
@@ -29,47 +60,18 @@ class Yelp extends React.Component {
     if (this.props.yelp) {
       header = <h3>Results from the Yelp API</h3>
       yelpData = this.props.yelp.map((ele, idx) => (
-        <li key={idx}>{ele.name} {ele.image_url} {ele.price} {ele.rating} {ele.url}</li>
+        <li key={idx}>
+          <a href={ele.url}>{ele.name}</a>
+          <p>The average rating is {ele.rating} out of 5 and the average cost is {ele.price} out of 4</p>
+          <img src={ele.image_url} alt="yelp"></img>
+        </li> 
       ));
     }
     
     return (
-      <section>
+      <section className="yelp">
         {header}
       < ul>{yelpData}</ul>
-    </section>
-    )
-  }
-}
-
-class Eventbrite extends React.Component {
-
-  render() {
-    return (
-      <section>
-      {/* <h3>Results from the Eventbrite API</h3> */}
-    </section>
-    );
-  }
-}
-
-class MovieDB extends React.Component {
-
-  render() {
-    console.log(this.props.movie)
-    let header;
-    let movieData;
-    if (this.props.movie) {
-      header = <h3>Results from The Movie DB API</h3>
-      movieData = this.props.movie.map((ele, idx) => (
-        <li key={idx}>{ele.title} {ele.released_on} {ele.total_votes} {ele.image_url} {ele.average_votes} {ele.popularity} {ele.overview}</li> 
-      ));
-    }
-
-    return (
-      <section>
-        {header}
-      < ul>{movieData}</ul>
     </section>
     )
   }
@@ -78,13 +80,19 @@ class MovieDB extends React.Component {
 class SearchResults extends React.Component {
 
   render() {
+    let title;
+    if (this.props.weather) {
+      title = `Here are the results for ${this.props.location.formatted_query}`
+      }
     return (
-      <React.Fragment>
+      <div>
+      <h2>{title}</h2>
+      <div className="column-container">
         <DarkSky location={this.props.location} weather={this.props.weather}/>
-        <Yelp location={this.props.location} yelp={this.props.yelp}/>
-        <Eventbrite />
-        <MovieDB location={this.props.location} movie={this.props.movie}/>
-      </React.Fragment>
+        <MovieDB movie={this.props.movie}/>
+        <Yelp yelp={this.props.yelp}/>
+      </div>
+      </div>
     )
   }
 }

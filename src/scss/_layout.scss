@@ -4,14 +4,48 @@ main {
   min-height: 100px;
 }
 
-.header, form label, h3 {
-  $font-family: $font-acme;
-}
-
 h1 {
-  font-family: $font-acme;
+  font-family: $font_acme;
   font-size: 5vw;
   color: $h1-color;
+  margin: 30px 0 30px 0;
+}
+
+h2 {
+  font-family: $font_josefin;
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0 20px 0;
+}
+
+h3  {
+  font-family: $font_acme;
+  text-align: center;
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 16px 0 16px 0;
+}
+
+p {
+  padding: 10px 0 10px 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+  text-indent: 5px;
+}
+
+li {
+  border-bottom: 2px solid #555;
+}
+
+input {
+  margin: 0 10px 0 6px;
+  padding: 3px;
 }
 
 button {
@@ -31,5 +65,24 @@ img {
 }
 
 .header, p, main label {
+  font-family: $font_acme;
   font-size: 1.4vw;
+}
+
+.map {
+  margin: 10px 0 20px 0;
+}
+
+.column-container {
+  display: flex;
+  margin: 0 10px 0 10px;
+}
+
+.column-container section {
+  display: inline-block;
+  width: 400px;
+  border-style: groove;
+  margin: 5px;
+  background-color: #FFF;
+  padding: 0 20px 0 20px;
 }
