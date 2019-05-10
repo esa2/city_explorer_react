@@ -22,7 +22,10 @@ class SearchForm extends React.Component {
     .query({data: this.state.query})
     .then( response => {
         this.setState({ body: response.body });
-        this.props.searchResult(response.body)
+        this.props.searchResult(response.body);
+        this.props.getResource('weather');
+        this.props.getResource('movies');
+        this.props.getResource('yelp');
     })
     .catch(error => {
         console.log(error);
