@@ -1,30 +1,17 @@
 import React from 'react';
-import superagent from 'superagent';
 
 class DarkSky extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { weather: [] };
-  }
-
-  getResource = () => {
-    superagent.get(`https://city-explorer-backend.herokuapp.com/weather`)
-    .query({data: this.props.location})
-    .then( data => {
-      this.setState({ weather: data.body });
-    })
-  }
 
   render() {
     let header;
-    if (this.state.weather.length) {
-      header = <h3>Results from Dark Sky API</h3>
+    let weatherData;
+    if (this.props.weather) {
+      header = <h3>Results from the Dark Sky API</h3>
+      weatherData = this.props.weather.map((ele, idx) => (
+        <li key={idx}>{ele.time} {ele.forecast}</li>
+      ));
     }
-      this.getResource()
-    let weatherData = this.state.weather.map((ele, idx) => (
-      <li key={idx}>{ele.time} {ele.forecast}</li>
-    ));
-
+    
     return (
       <section>
         {header}
@@ -37,11 +24,21 @@ class DarkSky extends React.Component {
 class Yelp extends React.Component {
 
   render() {
+    let header;
+    let yelpData;
+    if (this.props.yelp) {
+      header = <h3>Results from the Yelp API</h3>
+      yelpData = this.props.yelp.map((ele, idx) => (
+        <li key={idx}>{ele.name} {ele.image_url} {ele.price} {ele.rating} {ele.url}</li>
+      ));
+    }
+    
     return (
       <section>
-      {/* <h3>Results from the Yelp API</h3> */}
+        {header}
+      < ul>{yelpData}</ul>
     </section>
-    );
+    )
   }
 }
 
@@ -59,22 +56,22 @@ class Eventbrite extends React.Component {
 class MovieDB extends React.Component {
 
   render() {
+    console.log(this.props.movie)
+    let header;
+    let movieData;
+    if (this.props.movie) {
+      header = <h3>Results from The Movie DB API</h3>
+      movieData = this.props.movie.map((ele, idx) => (
+        <li key={idx}>{ele.title} {ele.released_on} {ele.total_votes} {ele.image_url} {ele.average_votes} {ele.popularity} {ele.overview}</li> 
+      ));
+    }
+
     return (
       <section>
-      {/* <h3>Results from The Movie DB API</h3> */}
+        {header}
+      < ul>{movieData}</ul>
     </section>
-    );
-  }
-}
-
-class HikingProject extends React.Component {
-
-  render() {
-    return (
-      <section>
-      {/* <h3>Results from the Hiking Project API</h3> */}
-    </section>
-    );
+    )
   }
 }
 
@@ -83,11 +80,10 @@ class SearchResults extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <DarkSky location={this.props.location}/>
-        <Yelp />
+        <DarkSky location={this.props.location} weather={this.props.weather}/>
+        <Yelp location={this.props.location} yelp={this.props.yelp}/>
         <Eventbrite />
-        <MovieDB />
-        <HikingProject />
+        <MovieDB location={this.props.location} movie={this.props.movie}/>
       </React.Fragment>
     )
   }
