@@ -14,9 +14,9 @@ class Map extends React.Component {
     }
 
     return (
-      <div>
+      <section className="map">
       {mapImg}
-      </div>
+      </section>
     );
   }
 }
